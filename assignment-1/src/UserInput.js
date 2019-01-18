@@ -6,7 +6,7 @@ class UserInput extends Component {
     }
     render() {
         return (
-            <input type="text" id="txt"></input>
+            <input type="text" id="txt" onChange={this.props.changed}></input>
         );
     }
 }

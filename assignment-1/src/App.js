@@ -5,12 +5,24 @@ import UserInput from './UserInput.js'
 import UserOutput from './UserOutput.js'
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: "Craig"
+    }
+  }
+  usernameChangedHandler = (event) => {
+    console.log(event);
+    this.setState({
+      username: event.target.value
+    })
+  }
   render() {
     return (
       <div className="App">
-        <UserInput/>
-        <UserOutput name="Craig"/>
-        <UserOutput name="Oliver"/>
+        <UserInput changed={this.usernameChangedHandler}/>
+        <UserOutput name={this.state.username} />
+        <UserOutput name="Oliver" />
       </div>
     );
   }
