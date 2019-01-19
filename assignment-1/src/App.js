@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import UserInput from './UserInput.js'
 import UserOutput from './UserOutput.js'
@@ -20,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <UserInput changed={this.usernameChangedHandler}/>
+        <UserInput changed={this.usernameChangedHandler} name={this.state.username}/>
         <UserOutput name={this.state.username} />
         <UserOutput name="Oliver" />
       </div>
